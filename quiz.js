@@ -153,6 +153,28 @@ function showTotalScore(){
     //1. You have gotten x out of y correct.
     
     $('.answer-js').html(`<h1>You have gotten ${score} out of ${currentQuestion} correct.</h1><button class="restart restart-js">restartQuiz</button>`);
+    
+    if (score >= 7){
+        $('.answer-js').html(`<h1>You have gotten ${score} out of ${currentQuestion} correct.</h1>
+        <h2>You are a World Traveler</h2>
+        <img src="https://media.giphy.com/media/11sBLVxNs7v6WA/giphy.gif">
+        <br>
+        <button class="restart restart-js">restartQuiz</button>`);
+    }
+    else if(score >= 4){
+        $('.answer-js').html(`<h1>You have gotten ${score} out of ${currentQuestion} correct.</h1>
+        <h2>You have knowledge of the outside world</h2>
+         <img src="https://media.giphy.com/media/d31wQ7ajDuaSoIJa/giphy.gif">
+         <br>
+        <button class="restart restart-js">restartQuiz</button>`);
+    }
+    else{
+        $('.answer-js').html(`<h1>You have gotten ${score} out of ${currentQuestion} correct.</h1>
+        <img src="https://media.giphy.com/media/3o6Ztk5WzIPLwaSpe8/giphy.gif">
+        <h2>You need to go out more</h2>
+        <br>
+        <button class="restart restart-js">restartQuiz</button>`);
+    }
     restartQuiz();
 }
 
