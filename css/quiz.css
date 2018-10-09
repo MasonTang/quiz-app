@@ -136,3 +136,11 @@ nav {
 
 .points {
   padding-right: 3rem; }
+
+table, td, th {
+  border: 1px solid black;
+  text-align: left;
+  padding: 1rem; }
+
+.answer {
+  display: none; }
