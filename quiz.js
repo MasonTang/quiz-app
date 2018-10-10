@@ -57,19 +57,14 @@ let questions = [
 ]
 
 
-$(document).ready(function(){
-    //When button is clicked the home page dissapears and goes to question screen
+function homePage(){
     $('.home button').click(function(e){
         e.preventDefault();
         $('.home').hide();
         $('.question').show();
         showQuestion();
     });
-
-    showAnswer();
-    nextQuestion();
-    
-});
+}
 
 function showQuestion(){
     //Loops through question object when combined with a loop
@@ -164,7 +159,7 @@ function showTotalScore(){
     else if(score >= 4){
         $('.answer-js').html(`<h1>You have gotten ${score} out of ${currentQuestion} correct.</h1>
         <h2>You have knowledge of the outside world</h2>
-         <img src="https://media.giphy.com/media/d31wQ7ajDuaSoIJa/giphy.gif">
+         <img src="https://media.giphy.com/media/ToMjGpxInCZSzD3V82s/giphy.gif">
          <br>
         <button class="restart restart-js">restartQuiz</button>`);
     }
@@ -191,3 +186,10 @@ function restartQuiz(){
     })
 }
 
+function makeQuiz(){
+    homePage();
+    showAnswer();
+    nextQuestion();
+}
+
+makeQuiz();
