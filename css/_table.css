@@ -1,0 +1,23 @@
+td, th {
+  border: 1px solid #a39f9f;
+  text-align: left;
+  padding: 1rem; }
+
+.answer {
+  display: none; }
+
+table {
+  border-collapse: collapse;
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5vh; }
+
+th {
+  background-color: #05ee38;
+  font-size: 2rem; }
+
+td {
+  background-color: #063ceb;
+  color: white;
+  font-size: 1.8rem; }

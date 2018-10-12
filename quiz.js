@@ -77,8 +77,14 @@ function showQuestion(){
     //adds an id and the question choices gets displayed
     for(let i = 0; i < question.choices.length; i++){
         $('.button-js').append(`
-        <button type="button" id='${i}' class="btn btn-primary lrg btn-q margin-bottom choice">${question.choices[i]}</button>`);
+        <button type="button" id='${i}' class="">${question.choices[i]}</button>`);
     }
+
+    //add Color to the buttons
+    $('#0').addClass('btn btn-blue btn-1')
+    $('#1').addClass('btn btn-green btn-2')
+    $('#2').addClass('btn btn-red btn-1')
+    $('#3').addClass('btn btn-orange btn-2')
 }
 
 
@@ -100,16 +106,31 @@ function showAnswer(){
         let selectedAnswer = question.choices[currentChoice];
         //correctAnswer represents the question[object] and answer
         let correctAnswer = question.answer;
-
+        //Correct answer
         if(selectedAnswer === correctAnswer){
             $('.question-js').hide();
-            $('.answer-js').html('<h1>You are correct</h1>  <button class="next-question next-question-js">Next Question</button>');
+            $('.answer-js').html(`
+            <div class="center-div">
+                <h1 class="h1-center-large">You are correct!!!</h1>
+                </br>
+                <img class="right-gif" src="https://media.giphy.com/media/3o7abKhOpu0NwenH3O/giphy.gif">
+            </div>
+
+            <div class="answer-btn">
+                <button class="home-button next-question-js button-center">Next Question </button>
+            </div>`);
+
             $('.answer-js').show();
             score++;
             $('.points').html(`Nomad Points: ${score}`);
-
+        //Wrong answer
         } else {
-            $('.answer-js').html(`<table>
+            $('.answer-js').html(`
+        <div class="center-div">
+            <img class="wrong-gif" src="https://media.giphy.com/media/3oKIP8quIMUnLdfTAQ/giphy.gif">
+        </div>
+
+        <table>
             <tr>
                 <th>Your Selected answer</th>
                 <th>Correct Answer</th>
@@ -119,7 +140,9 @@ function showAnswer(){
                 <td class="correct-answer"></td>
             </tr>
         </table>
-        <button class="next-question next-question-js">Next Question</button>`);
+        <div class="answer-btn">
+            <button class="home-button next-question-js button-center">Next Question</button>
+        </div>`);
             $('.selected-answer').text(selectedAnswer);
             $('.correct-answer').text(correctAnswer);
             $('.question-js').hide();
@@ -147,28 +170,39 @@ function nextQuestion(){
 function showTotalScore(){
     //1. You have gotten x out of y correct.
     
-    $('.answer-js').html(`<h1>You have gotten ${score} out of ${currentQuestion} correct.</h1><button class="restart restart-js">restartQuiz</button>`);
+    $('.answer-js').html(`
+    <h1>You have gotten ${score} out of ${currentQuestion} correct.</h1>
+    <button class="restart-js">restartQuiz</button>`);
     
     if (score >= 7){
-        $('.answer-js').html(`<h1>You have gotten ${score} out of ${currentQuestion} correct.</h1>
-        <h2>You are a World Traveler</h2>
-        <img src="https://media.giphy.com/media/11sBLVxNs7v6WA/giphy.gif">
-        <br>
-        <button class="restart restart-js">restartQuiz</button>`);
+        $('.answer-js').html(`
+        <div class="center-div">
+            <h1 class="h1-center-large">You have gotten ${score} out of ${currentQuestion} correct.</h1>
+            <img class="center-gif-end" src="https://media.giphy.com/media/11sBLVxNs7v6WA/giphy.gif">
+            <h1 class="h1-center-large">You are a World Traveler</h2>
+            <br>
+            <button class="restart-js home-button button-center">Restart Quiz</button>
+        </div>`);
     }
     else if(score >= 4){
-        $('.answer-js').html(`<h1>You have gotten ${score} out of ${currentQuestion} correct.</h1>
-        <h2>You have knowledge of the outside world</h2>
-         <img src="https://media.giphy.com/media/ToMjGpxInCZSzD3V82s/giphy.gif">
-         <br>
-        <button class="restart restart-js">restartQuiz</button>`);
+        $('.answer-js').html(`
+        <div class="center-div">
+            <h1 class="h1-center-large">You have gotten ${score} out of ${currentQuestion} correct.</h1>
+            <img class="center-gif-end" src="https://media.giphy.com/media/ToMjGpxInCZSzD3V82s/giphy.gif">
+            <br>
+            <h1 class="h1-center-large">You have knowledge of the outside world</h2>
+            <button class="restart-js home-button button-center">Restart Quiz</button>
+        </div>`);
     }
     else{
-        $('.answer-js').html(`<h1>You have gotten ${score} out of ${currentQuestion} correct.</h1>
-        <img src="https://media.giphy.com/media/3o6Ztk5WzIPLwaSpe8/giphy.gif">
-        <h2>You need to go out more</h2>
-        <br>
-        <button class="restart restart-js">restartQuiz</button>`);
+        $('.answer-js').html(`
+        <div class="center-div">
+            <h1 class="h1-center-large">You have gotten ${score} out of ${currentQuestion} correct.</h1>
+            <img class="center-gif-end" src="https://media.giphy.com/media/3o6Ztk5WzIPLwaSpe8/giphy.gif">
+            <h1 class="h1-center-large">You need to go out more</h1>
+            <br>
+            <button class="restart-js home-button button-center">Restart Quiz</button>
+        </div>`);
     }
     restartQuiz();
 }

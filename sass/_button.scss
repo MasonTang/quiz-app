@@ -20,15 +20,78 @@
     }
 }
 
-.button-center{
-    width:47rem;
-    margin-left:auto;
-    margin-right:auto;
-    display:flex;
-    flex-wrap: wrap;
-    justify-content:space-between;
+.margin-bottom{
+    margin-bottom: 5rem;
 }
 
-.margin-bottom{
-    margin-bottom: 5rem
+.answer-btn{
+  display:flex;
+  width:100%;
 }
+
+.button-center{
+  margin-right:auto;
+  margin-left:auto;
+  margin-top: 2rem;
+}
+
+.btn{
+  padding: 2rem;
+  width: 49.3%;
+  font-size: 2rem;
+  color: white;
+  cursor:pointer;
+  border-radius: 12px;
+
+   @include respond(tab-port){
+        padding: 2rem;
+        width: 49.2%;
+    }
+
+     @include respond(phone){
+        padding: 2rem;
+        width: 48%;
+    }
+}
+
+.btn-blue{
+  background-color: #00378E;
+  border: 1px solid #00378E;
+  margin-bottom: 3px;
+  margin-top: 10px;
+  margin-left:6px;
+}
+
+.btn-blue:hover{
+  background-color: #020a44;
+}
+
+.btn-red{
+  background-color: #C90F26;
+  border: 1px solid #C90F26;
+  margin-left:6px;
+}
+
+.btn-red:hover{
+  background-color:#a50320; 
+}
+
+.btn-orange{
+  background-color: #F77B00;
+  border: 1px solid #F77B00
+}
+
+.btn-orange:hover{
+  background-color: #db8008;
+}
+
+.btn-green{
+  background-color:#0cc90f;
+  border: 1px solid #0cc90f;
+}
+
+.btn-green:hover{
+  background-color: #09a50c;
+}
+
+

@@ -1,5 +1,67 @@
 .home-img{
     width: auto;
-    height: 70vh;
-    padding-bottom: 3rem; 
+    height: 67vh;
+    padding-bottom: 1rem; 
 }
+
+.img-question{
+  height: 60vh;
+  width:100vh;
+  align-self:center;
+
+  @include respond(tab-port){
+        padding: 2rem;
+        width: 85%;
+        height:auto;
+    }
+
+    @include respond(phone){
+        width: 85%;
+        height:auto;
+        
+    }
+
+     @include respond(small-phone){
+        align-self:none;
+        width: auto;
+        height:25vh;
+    }
+}
+
+.right-gif{
+    height: 60vh;
+    width:auto;
+    margin-left:auto;
+    margin-right:auto;
+
+    @include respond(tab-port){
+        width: 75%;
+        height:auto;
+    }
+}
+
+.center-gif-end{
+    height: 50vh;
+    width:auto;
+    margin-left:auto;
+    margin-right:auto;
+
+    @include respond(phone){
+        width: 75%;
+        height:auto;
+    }
+}
+
+.wrong-gif{
+    height: 40vh;
+    width:auto;
+    margin-top: 5vh;
+    margin-left:auto;
+    margin-right:auto;
+
+    @include respond(phone){
+        width: 75%;
+        height:auto;
+    }
+}
+

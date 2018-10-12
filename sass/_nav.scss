@@ -13,7 +13,7 @@ nav{
     & ul {
         display:flex;
         list-style-type:none;
-        
+        flex-wrap:wrap;
     }
 }
 
@@ -23,10 +23,26 @@ nav{
     position:relative;
     left: 13rem;
     line-height: 7vh;
+
+    @include respond(tab-port){
+        margin-left:2rem;
+        margin-right:auto;
+        left:0;
+    }
     
 }
 
 .points{
     padding-right: 3rem;
     line-height: 7vh;
+
+    @include respond(tab-port){
+        margin-left:auto;
+    }
+
+    @include respond(small-phone){
+            margin-left:none;
+            padding-right:0;
+            margin-left: 2rem;
+        }
 }
