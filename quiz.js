@@ -4,53 +4,53 @@ let score = 0;
 let currentQuestion = 0;
 let questions = [
     {
-        title: 'photo/bosnia.jpg',
+        title: 'refactored/bosnia.jpg',
         choices: ['Spain','Bosnia','Slovenia','Serbia'],
         answer:'Bosnia'
     },
     {
-        title: 'photo/spain.jpg',
+        title: 'refactored/spain.jpg',
         choices: ['Spain', 'Italy', 'France', 'Columbia'],
         answer: 'Spain'
     },
 
     {
-        title: 'photo/ireland.jpg',
+        title: 'refactored/ireland.jpg',
         choices: ['England', 'Scotland', 'Ireland', 'Finland'],
         answer: 'Ireland'
     },
     {
-        title: 'photo/colombia.jpg',
+        title: 'refactored/colombia.jpg',
         choices: ['Spain', 'Bosnia', 'Italy', 'Colombia'],
         answer: 'Colombia'
     },
     {
-        title: 'photo/hungary.jpg',
+        title: 'refactored/hungary.jpg',
         choices: ['Slovenia', 'Germany', 'Hungary', 'Serbia'],
         answer: 'Hungary'
     },
     {
-        title: 'photo/czech.jpg',
+        title: 'refactored/czech.jpg',
         choices: ['Germany', 'Czech Republic', 'Italy', 'Serbia'],
         answer: 'Czech Republic'
     },
     {
-        title: 'photo/spain2.jpg',
+        title: 'refactored/spain2.jpg',
         choices: ['Columbia', 'Mexico', 'Italy', 'Spain'],
         answer: 'Spain'
     },
     {
-        title: 'photo/croatia.jpg',
+        title: 'refactored/croatia.jpg',
         choices: ['Austria', 'Croatia', 'Columbia', 'Slovenia'],
         answer: 'Croatia'
     },
     {
-        title: 'photo/italy.jpg',
+        title: 'refactored/italy.jpg',
         choices: ['Croatia', 'France', 'Germany', 'Italy'],
         answer: 'Italy'
     },
     {
-        title: 'photo/slovenia.jpg',
+        title: 'refactored/slovenia.jpg',
         choices: ['Slovenia', 'Czech Republic', 'Ireland', 'Serbia'],
         answer: 'Slovenia'
     },

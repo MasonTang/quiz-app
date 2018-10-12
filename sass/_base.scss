@@ -22,15 +22,15 @@ body {
 html {
 	font-size: 62.5%;
 
-	 @include respond(phone){
+	@include respond(phone){
 		font-size: 50%;
 	}
-	
+
 	@include respond(small-phone){
 		font-size: 40%;
 	}
-	
-	@include respond(small-phone){
+
+	@include respond(xs-phone){
 		font-size: 30%;
     }
 }
