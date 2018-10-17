@@ -89,7 +89,11 @@ function showQuestion(){
     //adds an id and the question choices to button
     for(let i = 0; i < question.choices.length; i++){
         $('.button-js').append(`
-        <button type="button" id='${i}' class="">${question.choices[i]}</button>`);
+        <fieldset>
+        <button type="submit" id='${i}' class="">${question.choices[i]}
+        </fieldset>
+        </button>`
+        );
     }
 
     //add Color to the buttons
@@ -107,7 +111,8 @@ function showAnswer(){
     //4. Display correct answer.
     
 
-    $('.button-js').on('click', 'button', function() {
+    $('.button-js').on('click', 'button', function(event) {
+        event.preventDefault()
         const question = questions[currentQuestion];
         //this finds the id that was clicked
         //this represents .button-js and the button
@@ -234,10 +239,6 @@ function restartQuiz(){
         $('.answer-js').hide();
         $('.points').html(`Nomad Points: ${score}`);
     })
-}
-
-function rateQuiz(){
-    $('.answer-js').on('click', '.rate-js', function () {
 }
 
 function makeQuiz(){

@@ -180,6 +180,14 @@ html {
 .btn-green:hover {
   background-color: #09a50c; }
 
+form {
+  display: inline-block; }
+
+fieldset {
+  display: inline-block;
+  border: none;
+  width: 50%; }
+
 .home-img {
   width: auto;
   height: 67vh;
