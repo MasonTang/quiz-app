@@ -201,10 +201,9 @@ html {
       height: auto; } }
   @media only screen and (max-width: 430px) {
     .img-question {
-      -ms-flex-item-align: none;
-      align-self: none;
+      padding: 0rem;
       width: auto;
-      height: 25vh; } }
+      height: 35vh; } }
 
 .right-gif {
   height: 60vh;
@@ -229,7 +228,7 @@ html {
 .wrong-gif {
   height: 40vh;
   width: auto;
-  margin-top: 5vh;
+  margin-top: 2vh;
   margin-left: auto;
   margin-right: auto; }
   @media only screen and (max-width: 610px) {
@@ -274,7 +273,7 @@ nav {
   @media only screen and (max-width: 430px) {
     .points {
       margin-left: none;
-      padding-right: 0;
+      padding-right: 5px;
       margin-left: 2rem; } }
 
 td, th {

@@ -5,52 +5,62 @@ let currentQuestion = 0;
 let questions = [
     {
         title: 'refactored/bosnia.jpg',
+        alt: 'Bosnia',
         choices: ['Spain','Bosnia','Slovenia','Serbia'],
         answer:'Bosnia'
     },
     {
         title: 'refactored/spain.jpg',
+        alt:"Spain",
         choices: ['Spain', 'Italy', 'France', 'Columbia'],
         answer: 'Spain'
     },
 
     {
         title: 'refactored/ireland.jpg',
+        alt: 'Ireland',
         choices: ['England', 'Scotland', 'Ireland', 'Finland'],
         answer: 'Ireland'
     },
     {
         title: 'refactored/colombia.jpg',
+        alt: 'Colombia',
         choices: ['Spain', 'Bosnia', 'Italy', 'Colombia'],
         answer: 'Colombia'
     },
     {
         title: 'refactored/hungary.jpg',
+        alt: 'Hungary',
         choices: ['Slovenia', 'Germany', 'Hungary', 'Serbia'],
         answer: 'Hungary'
     },
     {
         title: 'refactored/czech.jpg',
+        alt: 'Czech Republic',
         choices: ['Germany', 'Czech Republic', 'Italy', 'Serbia'],
         answer: 'Czech Republic'
     },
     {
         title: 'refactored/spain2.jpg',
+        alt: 'Spain',
         choices: ['Columbia', 'Mexico', 'Italy', 'Spain'],
         answer: 'Spain'
     },
     {
         title: 'refactored/croatia.jpg',
+        alt: 'Croatia',
         choices: ['Austria', 'Croatia', 'Columbia', 'Slovenia'],
         answer: 'Croatia'
     },
     {
         title: 'refactored/italy.jpg',
+        alt: 'Italy',
         choices: ['Croatia', 'France', 'Germany', 'Italy'],
         answer: 'Italy'
     },
     {
         title: 'refactored/slovenia.jpg',
+        alt: 'Slovenia',
         choices: ['Slovenia', 'Czech Republic', 'Ireland', 'Serbia'],
         answer: 'Slovenia'
     },
@@ -69,12 +79,14 @@ function homePage(){
 function showQuestion(){
     //Loops through question object when combined with a loop
     let question = questions[currentQuestion];
-    //Img src becomes the picture file 
+    //Img src gets looped into the question page 
     $('.question-js img').attr('src', question.title);
+    //Img alt gets looped into the picture file 
+    $('.question-js img').attr('alt', question.alt);
     //Clear answer choices after every iteration
     $('.button-js').html('');
 
-    //adds an id and the question choices gets displayed
+    //adds an id and the question choices to button
     for(let i = 0; i < question.choices.length; i++){
         $('.button-js').append(`
         <button type="button" id='${i}' class="">${question.choices[i]}</button>`);
@@ -96,38 +108,38 @@ function showAnswer(){
     
 
     $('.button-js').on('click', 'button', function() {
-        let question = questions[currentQuestion];
+        const question = questions[currentQuestion];
         //this finds the id that was clicked
         //this represents .button-js and the button
-        let currentChoice = $(this).attr('id');
+        const currentChoice = $(this).attr('id');
         //question represents the object number
         //choices represent the key choices
         //currentChoice looks at the id that was clicked. The id represents the array index for the choices. 
-        let selectedAnswer = question.choices[currentChoice];
+        const selectedAnswer = question.choices[currentChoice];
         //correctAnswer represents the question[object] and answer
-        let correctAnswer = question.answer;
+        const correctAnswer = question.answer;
         //Correct answer
+        const questionNumber = `Question number ${currentQuestion + 1}`
         if(selectedAnswer === correctAnswer){
-            $('.question-js').hide();
             $('.answer-js').html(`
             <div class="center-div">
+                <h1 class="h1-center-large question-number"></h1>
                 <h1 class="h1-center-large">You are correct!!!</h1>
                 </br>
-                <img class="right-gif" src="https://media.giphy.com/media/3o7abKhOpu0NwenH3O/giphy.gif">
+                <img class="right-gif" src="https://media.giphy.com/media/3o7abKhOpu0NwenH3O/giphy.gif" alt="correct-gif">
             </div>
 
             <div class="answer-btn">
                 <button class="home-button next-question-js button-center">Next Question </button>
             </div>`);
-
-            $('.answer-js').show();
             score++;
             $('.points').html(`Nomad Points: ${score}`);
         //Wrong answer
         } else {
             $('.answer-js').html(`
         <div class="center-div">
-            <img class="wrong-gif" src="https://media.giphy.com/media/3oKIP8quIMUnLdfTAQ/giphy.gif">
+            <h1 class="h1-center-large question-number"></h1>
+            <img class="wrong-gif" alt="wrong-gif" src="https://media.giphy.com/media/3oKIP8quIMUnLdfTAQ/giphy.gif">
         </div>
 
         <table>
@@ -143,11 +155,12 @@ function showAnswer(){
         <div class="answer-btn">
             <button class="home-button next-question-js button-center">Next Question</button>
         </div>`);
-            $('.selected-answer').text(selectedAnswer);
-            $('.correct-answer').text(correctAnswer);
-            $('.question-js').hide();
-            $('.answer-js').show();
         } 
+        $('.question-number').text(questionNumber);
+        $('.selected-answer').text(selectedAnswer);
+        $('.correct-answer').text(correctAnswer);
+        $('.question-js').hide();
+        $('.answer-js').show();
         currentQuestion++
         if(currentQuestion >= questions.length){
             showTotalScore()
@@ -178,33 +191,37 @@ function showTotalScore(){
         $('.answer-js').html(`
         <div class="center-div">
             <h1 class="h1-center-large">You have gotten ${score} out of ${currentQuestion} correct.</h1>
-            <img class="center-gif-end" src="https://media.giphy.com/media/11sBLVxNs7v6WA/giphy.gif">
+            <img class="center-gif-end" src="https://media.giphy.com/media/11sBLVxNs7v6WA/giphy.gif" alt="happy-gif">
             <h1 class="h1-center-large">You are a World Traveler</h2>
             <br>
             <button class="restart-js home-button button-center">Restart Quiz</button>
+            <button class="rate-js home-button button-center">Rate Quiz</button>
         </div>`);
     }
     else if(score >= 4){
         $('.answer-js').html(`
         <div class="center-div">
             <h1 class="h1-center-large">You have gotten ${score} out of ${currentQuestion} correct.</h1>
-            <img class="center-gif-end" src="https://media.giphy.com/media/ToMjGpxInCZSzD3V82s/giphy.gif">
+            <img class="center-gif-end" alt="cat-traveler-gif" src="https://media.giphy.com/media/ToMjGpxInCZSzD3V82s/giphy.gif">
             <br>
             <h1 class="h1-center-large">You have knowledge of the outside world</h2>
             <button class="restart-js home-button button-center">Restart Quiz</button>
+            <button class="rate-js home-button button-center">Rate Quiz</button>
         </div>`);
     }
     else{
         $('.answer-js').html(`
         <div class="center-div">
             <h1 class="h1-center-large">You have gotten ${score} out of ${currentQuestion} correct.</h1>
-            <img class="center-gif-end" src="https://media.giphy.com/media/3o6Ztk5WzIPLwaSpe8/giphy.gif">
+            <img class="center-gif-end" alt="south-park-gif" src="https://media.giphy.com/media/3o6Ztk5WzIPLwaSpe8/giphy.gif">
             <h1 class="h1-center-large">You need to go out more</h1>
             <br>
             <button class="restart-js home-button button-center">Restart Quiz</button>
+            <button class="rate-js home-button button-center">Rate Quiz</button>
         </div>`);
     }
     restartQuiz();
+    rateQuiz()
 }
 
 function restartQuiz(){
@@ -216,8 +233,11 @@ function restartQuiz(){
         $('.question-js').hide();
         $('.answer-js').hide();
         $('.points').html(`Nomad Points: ${score}`);
-        console.log('hi');
     })
+}
+
+function rateQuiz(){
+    $('.answer-js').on('click', '.rate-js', function () {
 }
 
 function makeQuiz(){

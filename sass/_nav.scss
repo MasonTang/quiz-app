@@ -42,7 +42,7 @@ nav{
 
     @include respond(small-phone){
             margin-left:none;
-            padding-right:0;
+            padding-right:5px;
             margin-left: 2rem;
         }
 }

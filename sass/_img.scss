@@ -9,7 +9,7 @@
   width:100vh;
   align-self:center;
 
-  @include respond(tab-port){
+    @include respond(tab-port){
         padding: 2rem;
         width: 85%;
         height:auto;
@@ -17,14 +17,13 @@
 
     @include respond(phone){
         width: 85%;
-        height:auto;
-        
+        height:auto;    
     }
 
-     @include respond(small-phone){
-        align-self:none;
+    @include respond(small-phone){
+        padding: 0rem;
         width: auto;
-        height:25vh;
+        height:35vh;
     }
 }
 
@@ -55,7 +54,7 @@
 .wrong-gif{
     height: 40vh;
     width:auto;
-    margin-top: 5vh;
+    margin-top: 2vh;
     margin-left:auto;
     margin-right:auto;
 
