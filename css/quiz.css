@@ -34,6 +34,9 @@ html {
     html {
       font-size: 30%; } }
 
+fieldset {
+  border: none; }
+
 .home {
   margin-left: auto;
   margin-right: auto;
@@ -76,8 +79,15 @@ html {
   flex-direction: column; }
 
 .question-title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
   -ms-flex-item-align: center;
-  align-self: center; }
+  align-self: center;
+  font-size: 3rem;
+  color: white; }
 
 .center-div {
   width: 100%;
@@ -180,13 +190,10 @@ html {
 .btn-green:hover {
   background-color: #09a50c; }
 
-form {
-  display: inline-block; }
-
-fieldset {
+.button-js {
   display: inline-block;
   border: none;
-  width: 50%; }
+  width: 100%; }
 
 .home-img {
   width: auto;

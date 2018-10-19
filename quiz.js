@@ -90,7 +90,6 @@ function showQuestion(){
     for(let i = 0; i < question.choices.length; i++){
         $('.button-js').append(`
         <input type="button" id='${i}' class="" value="${question.choices[i]}">
-        </fieldset>
         </button>`
         );
     }
@@ -199,7 +198,6 @@ function showTotalScore(){
             <h1 class="h1-center-large">You are a World Traveler</h2>
             <br>
             <button class="restart-js home-button button-center">Restart Quiz</button>
-            <button class="rate-js home-button button-center">Rate Quiz</button>
         </div>`);
     }
     else if(score >= 4){
@@ -210,7 +208,6 @@ function showTotalScore(){
             <br>
             <h1 class="h1-center-large">You have knowledge of the outside world</h2>
             <button class="restart-js home-button button-center">Restart Quiz</button>
-            <button class="rate-js home-button button-center">Rate Quiz</button>
         </div>`);
     }
     else{
@@ -221,11 +218,9 @@ function showTotalScore(){
             <h1 class="h1-center-large">You need to go out more</h1>
             <br>
             <button class="restart-js home-button button-center">Restart Quiz</button>
-            <button class="rate-js home-button button-center">Rate Quiz</button>
         </div>`);
     }
     restartQuiz();
-    rateQuiz()
 }
 
 function restartQuiz(){
