@@ -89,8 +89,7 @@ function showQuestion(){
     //adds an id and the question choices to button
     for(let i = 0; i < question.choices.length; i++){
         $('.button-js').append(`
-        <fieldset>
-        <button type="submit" id='${i}' class="">${question.choices[i]}
+        <input type="button" id='${i}' class="" value="${question.choices[i]}">
         </fieldset>
         </button>`
         );
@@ -111,7 +110,7 @@ function showAnswer(){
     //4. Display correct answer.
     
 
-    $('.button-js').on('click', 'button', function(event) {
+    $('.button-js').on('click', 'input', function(event) {
         event.preventDefault()
         const question = questions[currentQuestion];
         //this finds the id that was clicked
